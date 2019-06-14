@@ -60,10 +60,10 @@ export default class Supercluster {
     }
 
     getClusters(bbox, zoom) {
-        let minLng = ((bbox[0] + 180) % 360 + 360) % 360 - 180;
-        const minLat = Math.max(-90, Math.min(90, bbox[1]));
-        let maxLng = bbox[2] === 180 ? 180 : ((bbox[2] + 180) % 360 + 360) % 360 - 180;
-        const maxLat = Math.max(-90, Math.min(90, bbox[3]));
+        let minLng = -360;
+        const minLat = -90;
+        let maxLng = 360;
+        const maxLat = 90;
 
         if (bbox[2] - bbox[0] >= 360) {
             minLng = -180;
